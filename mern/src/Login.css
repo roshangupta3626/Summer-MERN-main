@@ -1,0 +1,73 @@
+/* Login.css */
+.ezy__signin11 {
+  --bs-body-color: #333b7b;
+  --bs-body-bg: rgb(255, 255, 255);
+  --ezy-theme-color: rgb(13, 110, 253);
+  --ezy-form-card-bg: #ffffff;
+  --ezy-form-card-shadow: 6px 0px 118px rgba(0, 0, 0, 0.08);
+  background-color: var(--bs-body-bg);
+  padding: 60px 0;
+}
+@media (min-width: 991px) {
+  .ezy__signin11 {
+    padding: 100px 0;
+  }
+}
+.gray .ezy__signin11,
+.ezy__signin11.gray {
+  --bs-body-bg: rgb(246, 246, 246);
+  --ezy-form-card-bg: #f6f6f6;
+}
+.dark .ezy__signin11,
+.ezy__signin11.dark {
+  --bs-body-color: #ffffff;
+  --bs-body-bg: rgb(11, 23, 39);
+  --ezy-form-card-bg: #162231;
+}
+.ezy__signin11 .container {
+  min-height: 100vh;
+}
+.ezy__signin11-heading {
+  font-weight: bold;
+  font-size: 25px;
+}
+.ezy__signin11-bg-holder {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 150px;
+  border-radius: 20px;
+}
+.ezy__signin11-form-card {
+  background-color: var(--ezy-form-card-bg);
+  border: none;
+  box-shadow: var(--ezy-form-card-shadow);
+  border-radius: 15px;
+}
+.ezy__signin11 .form-control {
+  min-height: 48px;
+  background: rgba(163, 190, 241, 0.14);
+  border-radius: 10px;
+}
+.ezy__signin11 .form-control:focus {
+  border-color: var(--ezy-theme-color);
+  box-shadow: none;
+}
+.ezy__signin11-btn-submit {
+  padding: 12px 30px;
+  background-color: #333b7b;
+  color: #fff;
+}
+.ezy__signin11-or-separator {
+  position: relative;
+}
+.ezy__signin11-or-separator hr {
+  opacity: 0.15;
+}
+.ezy__signin11-or-separator span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--ezy-form-card-bg);
+}
