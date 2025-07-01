@@ -1,7 +1,8 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState, useCallback } from 'react'; // useCallback added
+import { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
+import { Spinner } from 'react-bootstrap';
 
 import Home from './Home';
 import Login from './Login';
@@ -14,7 +15,6 @@ function App() {
   const userDetails = useSelector((state) => state.userDetails);
   const [loading, setLoading] = useState(true);
 
-  // useCallback to prevent function recreation on every render
   const updateUserDetails = useCallback((user) => {
     dispatch({ type: user ? 'SET_USER' : 'CLEAR_USER', payload: user });
   }, [dispatch]);
@@ -35,7 +35,13 @@ function App() {
     checkAuth();
   }, [updateUserDetails]);
 
-  if (loading) return <div className="text-center mt-5">Loading...</div>;
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100">
+        <Spinner animation="border" variant="primary" />
+      </div>
+    );
+  }
 
   return (
     <Routes>
