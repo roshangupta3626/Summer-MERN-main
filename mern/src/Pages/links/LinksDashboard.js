@@ -1,3 +1,4 @@
+// src/pages/links/LinksDashboard.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import IconButton from '@mui/material/IconButton';
@@ -5,8 +6,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { Modal, Spinner } from 'react-bootstrap';
+import { serverEndpoint } from '../../config';
 
-const serverEndpoint = 'http://localhost:5001';
 
 const LinksDashboard = () => {
   const [linksData, setLinksData] = useState([]);
@@ -167,7 +168,6 @@ const LinksDashboard = () => {
 
   return (
     <div className="container py-4">
-      {/* <h1>Welcome, User!</h1> */}
       <div className="d-flex justify-content-between align-items-center mb-3">
         <h2 className="m-0">Affiliate Links Manager</h2>
         <button className="btn btn-primary btn-sm" onClick={() => handleOpenModal(false)}>
@@ -189,7 +189,6 @@ const LinksDashboard = () => {
         />
       </div>
 
-      {/* Add/Edit Modal */}
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>{isEdit ? 'Edit Link' : 'Add Link'}</Modal.Title>
@@ -238,7 +237,6 @@ const LinksDashboard = () => {
         </Modal.Body>
       </Modal>
 
-      {/* Delete Confirmation Modal */}
       <Modal show={showDeleteModal} onHide={handleCloseDeleteModal}>
         <Modal.Header closeButton>
           <Modal.Title>Confirm Delete</Modal.Title>

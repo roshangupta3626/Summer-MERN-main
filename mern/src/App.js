@@ -6,8 +6,10 @@ import { Spinner } from 'react-bootstrap';
 
 import Home from './Home';
 import Login from './Login';
-import Register from './Pages/Register';
-import Dashboard from './Pages/Dashboard';
+import Register from './pages/Register'; // ✅ Fixed path
+import Dashboard from './pages/Dashboard'; // ✅ Fixed path
+import LinksDashboard from './pages/links/LinksDashboard'; // ✅ Correct path
+import ManageUsers from './pages/users/ManageUsers'; // ✅ Correct path
 import AppLayout from './Layout/AppLayout';
 
 function App() {
@@ -83,6 +85,30 @@ function App() {
           userDetails ? (
             <AppLayout userDetails={userDetails} updateUserDetails={updateUserDetails}>
               <Dashboard userDetails={userDetails} />
+            </AppLayout>
+          ) : (
+            <Navigate to="/login" />
+          )
+        }
+      />
+      <Route
+        path="/links"
+        element={
+          userDetails ? (
+            <AppLayout userDetails={userDetails} updateUserDetails={updateUserDetails}>
+              <LinksDashboard />
+            </AppLayout>
+          ) : (
+            <Navigate to="/login" />
+          )
+        }
+      />
+      <Route
+        path="/users"
+        element={
+          userDetails ? (
+            <AppLayout userDetails={userDetails} updateUserDetails={updateUserDetails}>
+              <ManageUsers />
             </AppLayout>
           ) : (
             <Navigate to="/login" />
